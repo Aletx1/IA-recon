@@ -1,0 +1,41 @@
+{
+  "test_images": 239,
+  "top1_accuracy": 0.8326359832635983,
+  "confidence_threshold": 0.6,
+  "accepted_fraction": 0.9163179916317992,
+  "accepted_accuracy": 0.8721461187214612,
+  "confidence": {
+    "mean": 0.8495788302381667,
+    "min": 0.5057232975959778,
+    "p50": 0.9109561443328857,
+    "p75": 0.9830705523490906,
+    "p90": 0.9938824772834778,
+    "max": 0.998859167098999
+  },
+  "threshold_report": {
+    "0.20": {
+      "accepted_fraction": 1.0,
+      "accepted_accuracy": 0.8326359832635983
+    },
+    "0.30": {
+      "accepted_fraction": 1.0,
+      "accepted_accuracy": 0.8326359832635983
+    },
+    "0.40": {
+      "accepted_fraction": 1.0,
+      "accepted_accuracy": 0.8326359832635983
+    },
+    "0.50": {
+      "accepted_fraction": 1.0,
+      "accepted_accuracy": 0.8326359832635983
+    },
+    "0.60": {
+      "accepted_fraction": 0.9163179916317992,
+      "accepted_accuracy": 0.8721461187214612
+    },
+    "0.75": {
+      "accepted_fraction": 0.7238493723849372,
+      "accepted_accuracy": 0.953757225433526
+    }
+  }
+}
