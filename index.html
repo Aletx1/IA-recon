@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Infografia IA Recon Birds</title>
+    <style>
+      :root {
+        --ink: #0b1220;
+        --muted: #536072;
+        --blue: #0877c7;
+        --sky: #21b7ff;
+        --green: #18a058;
+        --lime: #b4f455;
+        --amber: #ffb020;
+        --red: #ff5a3d;
+        --card: rgba(255, 255, 255, 0.9);
+        --line: rgba(255, 255, 255, 0.24);
+        --shadow: 0 24px 80px rgba(0, 20, 50, 0.22);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, Segoe UI, Arial, sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 8% 8%, rgba(33, 183, 255, 0.42), transparent 28rem),
+          radial-gradient(circle at 92% 0%, rgba(180, 244, 85, 0.28), transparent 24rem),
+          linear-gradient(135deg, #071522 0%, #0c2b44 42%, #0e4b5a 100%);
+      }
+
+      .sheet {
+        width: min(1120px, calc(100% - 36px));
+        margin: 28px auto;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(240, 249, 255, 0.92));
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 560px;
+        padding: 48px;
+        color: white;
+        background:
+          linear-gradient(90deg, rgba(5, 20, 38, 0.92) 0%, rgba(5, 20, 38, 0.76) 52%, rgba(5, 20, 38, 0.2) 100%),
+          url("assets/alta_tortola.jpg") center right / cover;
+      }
+
+      .brand {
+        display: inline-grid;
+        place-items: center;
+        width: 76px;
+        height: 76px;
+        padding: 9px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+      }
+
+      .brand img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .eyebrow {
+        margin-top: 56px;
+        color: var(--lime);
+        font-size: 16px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 18px 0 20px;
+        font-size: clamp(46px, 6vw, 78px);
+        line-height: 0.94;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 680px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 22px;
+        line-height: 1.45;
+      }
+
+      .meta {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        max-width: 820px;
+        margin-top: 42px;
+      }
+
+      .meta span {
+        display: block;
+        padding: 14px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 700;
+      }
+
+      .content {
+        padding: 44px 48px 56px;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 22px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(32px, 4vw, 48px);
+        line-height: 1.02;
+      }
+
+      .section-title p {
+        max-width: 440px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.5;
+      }
+
+      .problem-grid,
+      .metric-grid,
+      .method-grid,
+      .future-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        min-height: 168px;
+        padding: 24px;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        border-radius: 24px;
+        background: var(--card);
+        box-shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
+      }
+
+      .card h3 {
+        margin: 0 0 10px;
+        font-size: 22px;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.48;
+      }
+
+      .problem-card {
+        background: linear-gradient(155deg, #ffffff, #eef8ff);
+      }
+
+      .foundation-card {
+        background: linear-gradient(155deg, #ffffff, #edfff5);
+      }
+
+      .guard-card {
+        background: linear-gradient(155deg, #ffffff, #fff7e8);
+      }
+
+      .metrics {
+        margin: 46px 0;
+        padding: 34px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #082133, #0d5f74);
+        color: white;
+      }
+
+      .metrics h2,
+      .metrics p {
+        color: white;
+      }
+
+      .metric {
+        padding: 22px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 48px;
+        line-height: 1;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: 10px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 15px;
+      }
+
+      .method {
+        margin-top: 46px;
+      }
+
+      .method-card {
+        position: relative;
+        min-height: 190px;
+      }
+
+      .step {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        margin-bottom: 18px;
+        border-radius: 14px;
+        background: var(--blue);
+        color: white;
+        font-size: 22px;
+        font-weight: 900;
+      }
+
+      .demo {
+        margin-top: 46px;
+      }
+
+      .demo-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .demo-card {
+        overflow: hidden;
+        border-radius: 24px;
+        background: white;
+        box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+      }
+
+      .demo-card img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        display: block;
+      }
+
+      .demo-card div {
+        padding: 18px;
+      }
+
+      .badge {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        color: white;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .high {
+        background: var(--green);
+      }
+
+      .medium {
+        background: var(--amber);
+      }
+
+      .low {
+        background: var(--red);
+      }
+
+      .demo-card h3 {
+        margin: 0 0 8px;
+        font-size: 19px;
+      }
+
+      .demo-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.4;
+      }
+
+      .results {
+        margin-top: 46px;
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 22px;
+      }
+
+      .result-panel {
+        border-radius: 28px;
+        padding: 28px;
+        background: white;
+        box-shadow: 0 16px 44px rgba(15, 23, 42, 0.1);
+      }
+
+      .bar {
+        margin-top: 16px;
+      }
+
+      .bar label {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .track {
+        height: 14px;
+        border-radius: 999px;
+        background: #e5edf5;
+        overflow: hidden;
+      }
+
+      .fill {
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--blue), var(--sky));
+      }
+
+      .conclusion {
+        margin-top: 46px;
+        padding: 34px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #eafff3, #edf8ff);
+        border: 1px solid rgba(15, 23, 42, 0.08);
+      }
+
+      .footer {
+        padding: 26px 48px;
+        background: #071522;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 14px;
+      }
+
+      @media (max-width: 820px) {
+        .sheet {
+          width: 100%;
+          margin: 0;
+          border-radius: 0;
+        }
+
+        .hero,
+        .content {
+          padding: 28px;
+        }
+
+        .hero {
+          min-height: 680px;
+          background:
+            linear-gradient(180deg, rgba(5, 20, 38, 0.98), rgba(5, 20, 38, 0.74)),
+            url("assets/alta_tortola.jpg") center bottom / cover;
+        }
+
+        .meta,
+        .problem-grid,
+        .metric-grid,
+        .method-grid,
+        .demo-grid,
+        .future-grid,
+        .results {
+          grid-template-columns: 1fr;
+        }
+
+        .section-title {
+          display: block;
+        }
+
+        .section-title p {
+          margin-top: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="sheet">
+      <header class="hero">
+        <div class="brand"><img src="assets/ucen-logo.png" alt="Logo UCEN" /></div>
+        <div class="eyebrow">Infografía | Avance final IA</div>
+        <h1>Agente IA para reconocimiento de aves chilenas</h1>
+        <p class="lead">
+          Modelo integrado en una app móvil para aceptar, revisar o rechazar imágenes según su confianza.
+        </p>
+        <div class="meta">
+          <span>Nombre: Pablo Aracena</span>
+          <span>Asignatura: Inteligencia Artificial</span>
+          <span>Carrera: Ingeniería Civil en Computación e Informática</span>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="section-title">
+          <h2>Problema y fundamento</h2>
+          <p>El objetivo no es responder siempre, sino reducir errores y dejar trazabilidad cuando el modelo duda.</p>
+        </div>
+        <div class="problem-grid">
+          <article class="card problem-card">
+            <h3>Problemática</h3>
+            <p>En concursos o galerías pueden subirse fotos que no son aves, especies incorrectas o imágenes difíciles de moderar manualmente.</p>
+          </article>
+          <article class="card foundation-card">
+            <h3>Fundamentación</h3>
+            <p>La IA permite una primera revisión automática, prioriza casos confiables y deriva a revisión humana las predicciones inciertas.</p>
+          </article>
+          <article class="card guard-card">
+            <h3>Criterio de seguridad</h3>
+            <p>El agente no publica todo automáticamente: usa umbrales y estados para aceptar, revisar o rechazar.</p>
+          </article>
+        </div>
+
+        <section class="metrics">
+          <div class="section-title">
+            <h2>Dataset y resultados</h2>
+            <p>Datos descargados con licencia abierta desde iNaturalist y organizados por clase para entrenamiento reproducible.</p>
+          </div>
+          <div class="metric-grid">
+            <div class="metric"><strong>2368</strong><span>imágenes entrenables</span></div>
+            <div class="metric"><strong>1596</strong><span>imágenes de aves chilenas</span></div>
+            <div class="metric"><strong>772</strong><span>imágenes no ave para rechazo</span></div>
+            <div class="metric"><strong>83.26%</strong><span>accuracy top-1 del gate ave/no-ave</span></div>
+            <div class="metric"><strong>87.21%</strong><span>precisión del gate entre aceptadas</span></div>
+            <div class="metric"><strong>73.98%</strong><span>precisión del clasificador entre aceptadas</span></div>
+          </div>
+        </section>
+
+        <section class="method">
+          <div class="section-title">
+            <h2>Metodología</h2>
+            <p>Se separó la moderación en dos modelos para reducir falsos positivos y mantener el flujo móvil liviano.</p>
+          </div>
+          <div class="method-grid">
+            <article class="card method-card">
+              <span class="step">1</span>
+              <h3>Recolección</h3>
+              <p>Dataset desde iNaturalist con licencias CC0, CC-BY y CC-BY-SA, más metadatos de fuente y autoría.</p>
+            </article>
+            <article class="card method-card">
+              <span class="step">2</span>
+              <h3>Entrenamiento</h3>
+              <p>MobileNetV3Small con transferencia desde ImageNet, aumento de datos y clases chilenas del MVP.</p>
+            </article>
+            <article class="card method-card">
+              <span class="step">3</span>
+              <h3>Integración</h3>
+              <p>Exportación a TensorFlow Lite e incorporación en Flutter para inferencia local en Android.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="demo">
+          <div class="section-title">
+            <h2>Demostración de confianza</h2>
+            <p>La demo muestra tres comportamientos esperados: alta confianza, revisión manual y rechazo.</p>
+          </div>
+          <div class="demo-grid">
+            <article class="demo-card">
+              <img src="assets/alta_tortola.jpg" alt="Tórtola usada para alta confianza" />
+              <div><span class="badge high">Alta</span><h3>Tórtola</h3><p>Aceptación automática cercana a 81%.</p></div>
+            </article>
+            <article class="demo-card">
+              <img src="assets/alta_tiuque.jpg" alt="Tiuque usado para alta confianza" />
+              <div><span class="badge high">Alta</span><h3>Tiuque</h3><p>Predicción confiable y visible en la app.</p></div>
+            </article>
+            <article class="demo-card">
+              <img src="assets/media_zorzal.jpg" alt="Zorzal usado para revisión manual" />
+              <div><span class="badge medium">Media</span><h3>Zorzal</h3><p>Queda en revisión y muestra candidatos.</p></div>
+            </article>
+            <article class="demo-card">
+              <img src="assets/baja_no_ave.jpeg" alt="Imagen no ave usada para rechazo" />
+              <div><span class="badge low">Baja</span><h3>No ave</h3><p>Rechazo fuerte para evitar trolleos.</p></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="results">
+          <article class="result-panel">
+            <h2>Decisiones tomadas</h2>
+            <p>Se eligió umbral 0.40 para especies porque balancea cantidad de respuestas y confiabilidad. A mayor umbral, menos respuestas automáticas pero más precisión.</p>
+            <div class="bar"><label><span>Umbral 0.30</span><span>64.94%</span></label><div class="track"><div class="fill" style="width:64.94%"></div></div></div>
+            <div class="bar"><label><span>Umbral 0.40</span><span>73.98%</span></label><div class="track"><div class="fill" style="width:73.98%"></div></div></div>
+            <div class="bar"><label><span>Umbral 0.50</span><span>81.72%</span></label><div class="track"><div class="fill" style="width:81.72%"></div></div></div>
+          </article>
+          <article class="result-panel">
+            <h2>Mejoras futuras</h2>
+            <div class="future-grid">
+              <div class="card"><h3>Datos reales</h3><p>Guardar fotos inciertas del celular y etiquetarlas.</p></div>
+              <div class="card"><h3>Más especies</h3><p>Ampliar gradualmente la cobertura de aves chilenas.</p></div>
+              <div class="card"><h3>Validación</h3><p>Comparar versiones antes de desplegar nuevos modelos.</p></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="conclusion">
+          <h2>Conclusiones</h2>
+          <p>
+            El MVP ya funciona como agente integrado: reconoce especies del conjunto definido, separa casos de revisión
+            y rechaza imágenes fuera de dominio. Para producción, el foco debe ser aumentar datos propios, revisar errores
+            reales y reentrenar de forma iterativa.
+          </p>
+        </section>
+      </section>
+
+      <footer class="footer">
+        IA Recon Birds | Entregable web HTML | Dataset, métricas y app preparados para demostración móvil.
+      </footer>
+    </main>
+  </body>
+</html>
