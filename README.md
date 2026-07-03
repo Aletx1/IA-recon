@@ -11,6 +11,7 @@ https://aletx1.github.io/IA-recon/
 ## Contenido del repositorio
 
 - `index.html`: infografia web publicada con GitHub Pages.
+- `docs/`: copia limpia de la infografia usada como fuente de GitHub Pages.
 - `assets/`: imagenes usadas por la infografia.
 - `model/`: modelos entrenados y labels.
 - `reports/`: metricas, evaluaciones y resumen del entrenamiento.
